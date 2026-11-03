@@ -1,0 +1,1 @@
+Chrome拡張の出力（WorldHistoryClips の中身）をここに置く
