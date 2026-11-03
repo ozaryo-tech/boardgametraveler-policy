@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "世界史ノート取り込み（抽出＋録画）",
+  "version": "0.2.0",
+  "description": "表示中のページの文章・画像を抽出し、タブを録画します。複数ページの連続取り込み、Wikipedia・YouTubeにも対応。個人学習用の素材づくりに。",
+  "minimum_chrome_version": "116",
+  "permissions": ["activeTab", "scripting", "downloads", "tabCapture", "offscreen", "storage"],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "action": {
+    "default_title": "ページを取り込む",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
