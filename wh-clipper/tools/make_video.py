@@ -226,7 +226,7 @@ def cmd_plan(a):
 
     out = {
         "_説明": "text=字幕と読み上げ。source は recording(録画) / image(抽出画像) / card(見出しだけ)。"
-                 "recording の start_ms〜end_ms が使う録画の区間。自由に書き換えてよい。",
+                 "recording の start_ms〜end_ms が使う録画の区間。note は画面左下に小さく出す注記（説・出典など）。自由に書き換えてよい。",
         "title": data.get("title", ""),
         "recording": rec_file,
         "scenes": scenes,
@@ -327,7 +327,7 @@ def wrap(draw, text, font, max_w):
     return lines
 
 
-def draw_chrome(d, heading, subtitle, font_path, transparent_mid):
+def draw_chrome(d, heading, subtitle, font_path, transparent_mid, corner_note=None):
     f_head = ImageFont.truetype(font_path, 56)
     f_sub = ImageFont.truetype(font_path, 46)
     d.rectangle((0, 0, W, HEAD_H), fill=BG)
@@ -339,16 +339,22 @@ def draw_chrome(d, heading, subtitle, font_path, transparent_mid):
     for ln in lines[:4]:
         d.text((100, y), ln, font=f_sub, fill=WHITE)
         y += 66
+    if corner_note:  # 左下の小さな注記（「〜という説」など、断定できない内容用）
+        f_note = ImageFont.truetype(font_path, 26)
+        txt = corner_note
+        while len(txt) > 1 and d.textlength(txt, font=f_note) > W - 120:
+            txt = txt[:-2] + "…"
+        d.text((40, H - 46), txt, font=f_note, fill=(160, 170, 185))
 
 
-def render_overlay(path, heading, subtitle, font_path):
+def render_overlay(path, heading, subtitle, font_path, corner_note=None):
     """録画の上に重ねる見出し帯＋字幕帯（真ん中は透明）。"""
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    draw_chrome(ImageDraw.Draw(im), heading, subtitle, font_path, True)
+    draw_chrome(ImageDraw.Draw(im), heading, subtitle, font_path, True, corner_note)
     im.save(path)
 
 
-def render_still(path, heading, subtitle, image_path, note, font_path):
+def render_still(path, heading, subtitle, image_path, note, font_path, corner_note=None):
     """抽出した画像（または見出しだけ）を背景にした静止画フレーム。"""
     im = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(im)
@@ -367,7 +373,7 @@ def render_still(path, heading, subtitle, image_path, note, font_path):
     else:
         f_big = ImageFont.truetype(font_path, 110)
         d.text(((W - d.textlength(heading, font=f_big)) // 2, 380), heading, font=f_big, fill=WHITE)
-    draw_chrome(d, heading, subtitle, font_path, False)
+    draw_chrome(d, heading, subtitle, font_path, False, corner_note)
     im.save(path)
 
 
@@ -417,7 +423,7 @@ def cmd_render(a):
                 L = max((c["end_ms"] - c["start_ms"]) / 1000, 0.5)
                 ratio = min(max(D / L, 0.6), 2.5)  # 映像の速さは 0.4〜1.7 倍の範囲で合わせる
                 ov = work / f"ov_{c['id']}.png"
-                render_overlay(ov, sc["heading"], c["text"], font)
+                render_overlay(ov, sc["heading"], c["text"], font, c.get("note"))
                 vh = PANEL_Y - HEAD_H
                 filt = (
                     f"[0:v]setpts=(PTS-STARTPTS)*{ratio:.4f},fps=30,"
@@ -433,7 +439,7 @@ def cmd_render(a):
             else:
                 png = work / f"f_{c['id']}.png"
                 img = folder / c["image"] if src == "image" and c.get("image") else None
-                render_still(png, sc["heading"], c["text"], img, c.get("image_note"), font)
+                render_still(png, sc["heading"], c["text"], img, c.get("image_note"), font, c.get("note"))
                 cmd = ["ffmpeg", "-y", "-loop", "1", "-framerate", "30", "-t", f"{D:.3f}", "-i", str(png),
                        "-i", str(wav), "-af", f"apad=pad_dur={PAD_SEC}"]
             cmd += ["-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", "30", "-preset", "veryfast", "-crf", "20",
