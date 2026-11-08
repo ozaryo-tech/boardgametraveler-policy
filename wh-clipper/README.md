@@ -123,3 +123,32 @@ python tools/make_doc_video.py render ..\wh-work\projects\01_ロシアの起源 
 - scenes.json の `note` が画面左下の注記（「説」など）、`visual` が使う画像、`motion` が動き（zoom_in / zoom_out / pan_left / pan_right）。
 - `--font` に太めの日本語フォント（例 C:\Windows\Fonts\YuGothB.ttc）を指定すると字幕が読みやすくなります。
 - 使った画像の出典は、動画と同じ場所の `*_credits.txt` に出ます（概要欄に貼る）。
+
+---
+
+## 追加：資料が無い場面は、生成イラスト＋2.5Dの動き（make_illustrations.py / parallax）
+図形で描いた絵ではなく、画像生成AIで作った、少しリアルなイラストを使います。動きは、絵の奥行きを推定して、手前と奥を別々にずらす「2.5D」で付けます（絵は崩れません）。
+
+```
+# イラストの指示書は、プロジェクトの illustrations.json（章ごとの内容・英語プロンプト・画風）にあります
+
+# A) PC内で生成（Stable Diffusion系。Automatic1111/Forge を --api 付きで起動しておく）
+python tools/make_illustrations.py generate ..\wh-work\projects\01_ロシアの起源 --backend a1111
+#    ComfyUI なら:  --backend comfyui --checkpoint モデル名.safetensors
+# B) Gemini（APIキーが必要。Google AI Studio で発行。環境変数 GEMINI_API_KEY に設定）
+python tools/make_illustrations.py generate ..\wh-work\projects\01_ロシアの起源 --backend gemini --chapter 3
+#    --backend auto なら、PC内 → Gemini の順に使えるものを自動で選ぶ
+# C) 手動（GeminiアプリやChatGPTなど）: 指示書を書き出し、画像を images\ に保存して登録
+python tools/make_illustrations.py prompts  ..\wh-work\projects\01_ロシアの起源   # illustration_prompts.md ができる
+python tools/make_illustrations.py register ..\wh-work\projects\01_ロシアの起源
+
+# 画像を各カットに割り当て → 奥行き画像を作る → 動画化
+python tools/make_doc_video.py script ..\wh-work\scripts\01_ロシアの起源 ..\wh-work\projects\01_ロシアの起源 --force
+pip install transformers torch opencv-python-headless numpy
+python tools/make_doc_video.py depth  ..\wh-work\projects\01_ロシアの起源          # 奥行き推定（初回はモデルを取得）
+python tools/make_doc_video.py render ..\wh-work\projects\01_ロシアの起源 --chapter 3 --preview
+```
+- `depth --method gradient` は、モデルなしの簡易版（画面の下ほど手前とみなす）。品質は劣る。
+- AI動画（Runway・Kling・Veo など）を使う場面は、illustrations.json の `ai_video: true` が候補。生成した mp4 を `images\` に置き、scenes.json のそのカットの `visual` に `images/○○.mp4` と書くと、静止画の代わりに使われる。
+- 生成イラストは、動画の概要欄に「AI生成イラスト」と明記する（`*_credits.txt` に出る）。史実の再現ではなく、場面のイメージ画。
+- 画風を統一するため、illustrations.json の `style` を全カットに付けている。気に入らなければここを直す。

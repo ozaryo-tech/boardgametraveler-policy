@@ -1,3 +1,5 @@
 _work/
 _work_preview/
 *.mp4
+images/ill_*.png
+images/*.depth.png

@@ -7,6 +7,7 @@ Claude API は使わない。画面録画は使わず、パブリックドメイ
   1) script  <台本フォルダ> <プロジェクト>   台本(ch*.md) → scenes.json / visuals.json
   2) images  search "<語>" / get "File:○○.jpg" --project <P> --chapter 3
              Wikimedia Commons から画像を探して取り込む（出典・権利は visuals.json に記録）
+  2b) depth  <プロジェクト>                   絵ごとの奥行き画像を作る（2.5Dの立体的な動き用）
   3) voice   <プロジェクト>                   読み上げ音声（make_video.py の voice と同じ。VOICEVOX / 無音）
   4) render  <プロジェクト> [--chapter 3] [--preview] [--bgm 曲.mp3]
 
@@ -36,6 +37,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import make_video as mv  # noqa: E402  (chunk_text / voice / find_font を再利用)
 
 FPS = 30
+VIDEO_EXT = (".mp4", ".mov", ".webm", ".mkv")
+IMG_EXT = (".jpg", ".jpeg", ".png", ".webp")
 XF = 0.5          # カット間のクロスフェード秒
 GAP = 0.35        # 同じ画像の中で字幕が切り替わる間
 MOTIONS = ["zoom_in", "pan_right", "zoom_out", "pan_left"]
@@ -230,7 +233,8 @@ def cmd_images(a):
 
 # ============================================================ 4) render
 class Style:
-    def __init__(self, preview, font):
+    def __init__(self, preview, font, parallax=True):
+        self.parallax = parallax
         self.W, self.H = (1280, 720) if preview else (1920, 1080)
         self.k = self.W / 1920
         self.font = font
@@ -380,6 +384,38 @@ def motion_expr(motion, n, bw=None):
     return f"1+0.12*on/{n}", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
 
 
+def depth_path(img):
+    return img.with_name(img.stem + ".depth.png")
+
+
+def near_16x9(path):
+    with Image.open(path) as im:
+        ar = im.width / im.height
+    return abs(ar - 16 / 9) / (16 / 9) < 0.22
+
+
+def cover_pair(img_path, dep_path, st):
+    """画像と奥行き画像を、同じ範囲で16:9に切り抜く（視差用）。"""
+    bw, bh = int(st.W * 1.5), int(st.H * 1.5)
+    pic = Image.open(img_path).convert("RGB")
+    dep = Image.open(dep_path).convert("L").resize(pic.size, Image.BICUBIC)
+    s = max(bw / pic.width, bh / pic.height)
+    nw, nh = int(pic.width * s) + 1, int(pic.height * s) + 1
+    l, t = (nw - bw) // 2, (nh - bh) // 2
+    pic = pic.resize((nw, nh), Image.LANCZOS).crop((l, t, l + bw, t + bh))
+    dep = dep.resize((nw, nh), Image.BICUBIC).crop((l, t, l + bw, t + bh))
+    return vignette(pic, 0.4), dep
+
+
+def clip_seconds(path):
+    r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)],
+                       capture_output=True, text=True)
+    try:
+        return float(r.stdout.strip())
+    except ValueError:
+        return 0.0
+
+
 def build_shots(scene):
     """同じ画像が続くカットを1つのショットにまとめる（動きが途中で途切れないように）。"""
     shots = []
@@ -399,8 +435,22 @@ def render_shot(folder, work, st, scene, shot, idx, first_in_scene, tag):
         t += c["duration"] + GAP
     L = t - GAP + XF
     N = int(math.ceil(L * FPS))
+    vis = folder / shot["visual"] if shot["visual"] else None
+    mode = "kb"
+    if vis and vis.exists() and vis.suffix.lower() in VIDEO_EXT:
+        mode = "video"
+    elif vis and vis.exists() and st.parallax and depth_path(vis).exists() and near_16x9(vis):
+        mode = "par"
     base = work / f"base_{scene['id']}_{idx}.png"
-    make_base(shot["visual"], folder, st, seed=scene["id"] * 100 + idx).save(base)
+    src0 = base
+    if mode == "par":
+        from parallax import write_parallax
+        pic, dep = cover_pair(vis, depth_path(vis), st)
+        pic.save(base); dep.save(work / f"depth_{scene['id']}_{idx}.png")
+        src0 = work / f"par_{scene['id']}_{idx}.mp4"
+        write_parallax(base, work / f"depth_{scene['id']}_{idx}.png", src0, L, st.W, st.H, FPS, shot["motion"])
+    elif mode == "kb":
+        make_base(shot["visual"], folder, st, seed=scene["id"] * 100 + idx).save(base)
     wav = work / f"shot_{scene['id']}_{idx}.wav"
     merge_wavs([folder / c["audio"] for c in cs], starts, L, wav)
     ovs, filt_in, enables = [], [], []
@@ -415,12 +465,23 @@ def render_shot(folder, work, st, scene, shot, idx, first_in_scene, tag):
         title = work / f"title_{scene['id']}.png"
         overlay_title(title, st, scene["heading"])
     z, x, y = motion_expr(shot["motion"], N)
-    cmd = ["ffmpeg", "-y", "-i", str(base), "-i", str(wav)]
+    cmd = ["ffmpeg", "-y"]
+    if mode == "video":
+        cmd += ["-stream_loop", "-1"]
+    cmd += ["-i", str(src0 if mode != "video" else vis), "-i", str(wav)]
     for p in ovs:
         cmd += ["-loop", "1", "-framerate", str(FPS), "-t", f"{L:.3f}", "-i", str(p)]
     if title:
         cmd += ["-loop", "1", "-framerate", str(FPS), "-t", f"{L:.3f}", "-i", str(title)]
-    chain = [f"[0:v]zoompan=z='{z}':x='{x}':y='{y}':d={N}:s={st.W}x{st.H}:fps={FPS},format=yuv420p[v0]"]
+    if mode == "kb":
+        chain = [f"[0:v]zoompan=z='{z}':x='{x}':y='{y}':d={N}:s={st.W}x{st.H}:fps={FPS},format=yuv420p[v0]"]
+    elif mode == "par":
+        chain = ["[0:v]format=yuv420p[v0]"]
+    else:  # AI動画などの素材：短ければ少しゆっくりにして、足りなければ繰り返す
+        cd = clip_seconds(vis)
+        slow = min(L / cd, 1.8) if 0 < cd < L else 1.0
+        chain = [f"[0:v]scale={st.W}:{st.H}:force_original_aspect_ratio=increase,crop={st.W}:{st.H},"
+                 f"setpts=PTS*{slow:.3f},fps={FPS},format=yuv420p[v0]"]
     cur = "v0"
     for j, (a, b) in enumerate(enables):
         chain.append(f"[{cur}][{j + 2}:v]overlay=0:0:enable='between(t,{a:.3f},{b:.3f})':format=auto[v{j + 1}]")
@@ -470,12 +531,43 @@ def cmd_voice(a):
     mv.cmd_voice(ns)
 
 
+def cmd_depth(a):
+    """images/ の絵ごとに奥行き画像（○○.depth.png）を作る。明るい=手前。"""
+    folder = Path(a.project) / "images"
+    imgs = [p for p in sorted(folder.iterdir()) if p.suffix.lower() in IMG_EXT and ".depth" not in p.name]
+    if not imgs:
+        die(f"{folder} に画像がありません。")
+    pipe = None
+    if a.method == "model":
+        try:
+            from transformers import pipeline
+            print("奥行き推定モデルを読み込み中…（初回はダウンロードあり）")
+            pipe = pipeline("depth-estimation", model=a.model)
+        except Exception as e:  # noqa: BLE001
+            die("奥行き推定モデルを使えません（pip install transformers torch が必要）。\n"
+                f"  {e}\n  簡易版で作るなら --method gradient（画面の下ほど手前とみなす）")
+    for p in imgs:
+        out = depth_path(p)
+        if out.exists() and not a.force:
+            continue
+        im = Image.open(p).convert("RGB")
+        if pipe:
+            d = pipe(im)["depth"].convert("L")
+        else:
+            from parallax import gradient_depth
+            import numpy as np
+            d = Image.fromarray(gradient_depth(im.width, im.height))
+        d.save(out)
+        print("作成:", out.name)
+    print("次: render で自動的に使われます（--no-parallax で無効化）。")
+
+
 def cmd_render(a):
     if not shutil.which("ffmpeg"):
         die("ffmpeg が見つかりません。インストールして PATH を通してください。")
     folder = Path(a.project)
     plan = load_json(folder / "scenes.json")
-    st = Style(a.preview, mv.find_font(a.font))
+    st = Style(a.preview, mv.find_font(a.font), not a.no_parallax)
     work = folder / ("_work_preview" if a.preview else "_work")
     work.mkdir(exist_ok=True)
     scenes = [s for s in plan["scenes"] if a.chapter is None or s["id"] == a.chapter]
@@ -546,6 +638,13 @@ def main():
     p.add_argument("--force-license", action="store_true")
     p.set_defaults(fn=cmd_images_entry)
 
+    p = sub.add_parser("depth", help="絵ごとに奥行き画像を作る（立体的な動き用）")
+    p.add_argument("project")
+    p.add_argument("--method", choices=["model", "gradient"], default="model")
+    p.add_argument("--model", default="depth-anything/Depth-Anything-V2-Small-hf")
+    p.add_argument("--force", action="store_true")
+    p.set_defaults(fn=cmd_depth)
+
     p = sub.add_parser("voice", help="読み上げ音声を作る")
     p.add_argument("project")
     p.add_argument("--speaker", type=int, default=3)
@@ -557,6 +656,7 @@ def main():
     p.add_argument("project")
     p.add_argument("--chapter", type=int, help="この章だけ作る（確認用）")
     p.add_argument("--preview", action="store_true", help="720pの軽量プレビュー")
+    p.add_argument("--no-parallax", action="store_true", help="奥行きによる立体的な動きを使わない（単純な拡大・移動のみ）")
     p.add_argument("--bgm", help="BGMの音声ファイル（mp3/wav）")
     p.add_argument("--bgm-volume", type=float, default=0.12)
     p.add_argument("--font", help="日本語フォントのファイル（太めがおすすめ）")

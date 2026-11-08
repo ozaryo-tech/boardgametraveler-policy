@@ -15,6 +15,7 @@
 - 画面録画方式（make_video.py）より、台本からの「歴史画像＋動き」方式（`wh-clipper/tools/make_doc_video.py`）を優先する。使い方は `wh-clipper/README.md` の末尾。
 - 台本: `wh-work/scripts/<テーマ>/ch*.md`（ナレーション／左下注記／画面メモ）。「説」や未確認の内容は、左下注記として画面に小さく出す。
 - 画像はパブリックドメインを使い、出典を `visuals.json` と `*_credits.txt` に残す。
+- 資料が無い場面は、画像生成AIのイラスト（PC内のStable Diffusion系 → Gemini の二段構え）＋2.5D視差で動かす。図形を組み合わせた絵は使わない。`make_illustrations.py` と `illustrations.json`。必要な数カットだけAI動画（画像→動画）に差し替える。
 - サムネイル: `wh-clipper/tools/make_thumbnail.py`、型は `wh-work/formats/thumbnail_style_mond.md`（案A採用）。
 
 ## 次にやること
