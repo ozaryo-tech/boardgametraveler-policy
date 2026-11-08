@@ -1,0 +1,24 @@
+{
+  "ch01": [
+    {
+      "file": "images/vasnetsov_invitation.jpg",
+      "commons": "File:Prizvanievaryagov.jpg",
+      "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）"
+    }
+  ],
+  "ch02": [],
+  "ch03": [
+    {
+      "file": "images/vasnetsov_invitation.jpg",
+      "commons": "File:Prizvanievaryagov.jpg",
+      "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）"
+    }
+  ],
+  "ch04": [],
+  "ch05": [],
+  "ch06": [],
+  "ch07": [],
+  "ch08": [],
+  "ch09": [],
+  "_説明": "章(ch01…)ごとに画像を並べる。file は images/ からの相対パス。credit は画面右下に小さく表示。"
+}

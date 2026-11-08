@@ -11,5 +11,11 @@
 - 参考YouTube動画は後日共有予定。それをもとに「形式」を作り、`make_video.py --format` を実装する。
 - ユーザーの環境は Windows。Python/ffmpeg の有無は未確認。
 
+## 動画の作り方（現行）
+- 画面録画方式（make_video.py）より、台本からの「歴史画像＋動き」方式（`wh-clipper/tools/make_doc_video.py`）を優先する。使い方は `wh-clipper/README.md` の末尾。
+- 台本: `wh-work/scripts/<テーマ>/ch*.md`（ナレーション／左下注記／画面メモ）。「説」や未確認の内容は、左下注記として画面に小さく出す。
+- 画像はパブリックドメインを使い、出典を `visuals.json` と `*_credits.txt` に残す。
+- サムネイル: `wh-clipper/tools/make_thumbnail.py`、型は `wh-work/formats/thumbnail_style_mond.md`（案A採用）。
+
 ## 次にやること
 `wh-clipper/HANDOFF.md` の「7. 既知の課題・次にやること」を参照。

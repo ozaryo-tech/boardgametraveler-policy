@@ -97,3 +97,29 @@ python tools/make_video.py render "<保存フォルダ>"              ← 全体
   Wikipediaの画像は、`sourcePage` のページでライセンスと表示条件を確認できます。
 - 録画は Chrome の `tabCapture` を使います。一部のページ（chrome:// など）では使えません。
 - 連続取り込みで移動するのは、同じサイト内のページだけです。
+
+---
+
+## 追加：台本から「歴史画像＋動き」の動画を作る（tools/make_doc_video.py）
+画面録画を使わず、パブリックドメインの絵画・写本・地図を、ゆっくりした拡大・移動、場面転換、字幕、左下注記、BGMで見せる方式です。
+
+```
+# 1) 台本(ch*.md) → scenes.json / visuals.json
+python tools/make_doc_video.py script ..\wh-work\scripts\01_ロシアの起源 ..\wh-work\projects\01_ロシアの起源
+
+# 2) 画像を探して取り込む（章ごと。出典・権利は visuals.json に自動記録。権利が不明な画像は取り込まない）
+python tools/make_doc_video.py images search "Rurik Varangians painting"
+python tools/make_doc_video.py images get "File:Prizvanievaryagov.jpg" --project ..\wh-work\projects\01_ロシアの起源 --chapter 3
+python tools/make_doc_video.py script ..\wh-work\scripts\01_ロシアの起源 ..\wh-work\projects\01_ロシアの起源 --force   # 画像を割り当て直す
+
+# 3) 音声（VOICEVOXが起動していれば読み上げ。なければ --no-voice で無音）
+python tools/make_doc_video.py voice ..\wh-work\projects\01_ロシアの起源
+
+# 4) 動画（まず1章だけ・軽量で確認）
+python tools/make_doc_video.py render ..\wh-work\projects\01_ロシアの起源 --chapter 3 --preview
+python tools/make_doc_video.py render ..\wh-work\projects\01_ロシアの起源 --bgm bgm.mp3
+```
+- 画像は大きい元ファイルほどきれいです（動かす際に拡大するため）。小さい画像は荒く見えます。
+- scenes.json の `note` が画面左下の注記（「説」など）、`visual` が使う画像、`motion` が動き（zoom_in / zoom_out / pan_left / pan_right）。
+- `--font` に太めの日本語フォント（例 C:\Windows\Fonts\YuGothB.ttc）を指定すると字幕が読みやすくなります。
+- 使った画像の出典は、動画と同じ場所の `*_credits.txt` に出ます（概要欄に貼る）。

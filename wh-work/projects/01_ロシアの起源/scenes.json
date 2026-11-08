@@ -1,0 +1,786 @@
+{
+  "title": "ロシアの起源",
+  "scenes": [
+    {
+      "id": 1,
+      "heading": "第1章 導入",
+      "chunks": [
+        {
+          "id": "1-1",
+          "text": "ロシアという国は、いつ、どうやって生まれたのでしょうか。",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "pan_right",
+          "audio": "_work/audio/1-1.wav",
+          "audio_hash": "f2f72b82dcbb",
+          "duration": 4.67
+        },
+        {
+          "id": "1-2",
+          "text": "実はその始まりには、とても不思議な伝説が残っています。「自分たちでは国をまとめられないから、海のむこうの人たちに、来て治めてもらおう」。",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "zoom_out",
+          "audio": "_work/audio/1-2.wav",
+          "audio_hash": "c6b4d0b8715e",
+          "duration": 11.33
+        },
+        {
+          "id": "1-3",
+          "text": "国の始まりが、外国人への「お願い」だった、というのです。",
+          "note": "※『原初年代記』（12世紀初め成立）の記述。史実かどうかは議論がある",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "pan_left",
+          "audio": "_work/audio/1-3.wav",
+          "audio_hash": "d5fb59b15871",
+          "duration": 4.67
+        },
+        {
+          "id": "1-4",
+          "text": "しかも、その人たちの名前、「ルーシ」が、のちの「ロシア」という国名のもとになったといわれています。",
+          "note": "「ロシア」 → ※「ルーシ」の語源には諸説ある",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "zoom_in",
+          "audio": "_work/audio/1-4.wav",
+          "audio_hash": "d48bdb79a071",
+          "duration": 8.17
+        },
+        {
+          "id": "1-5",
+          "text": "今回は、九世紀の東ヨーロッパを舞台に、リューリクという人物と、ロシアの原点をたどります。",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "pan_right",
+          "audio": "_work/audio/1-5.wav",
+          "audio_hash": "d862a6402310",
+          "duration": 7.33
+        },
+        {
+          "id": "1-6",
+          "text": "本当にあった話なのか、それとも、あとから作られた物語なのか。今も、歴史家の意見が分かれている部分も、あわせてお話しします。",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "zoom_out",
+          "audio": "_work/audio/1-6.wav",
+          "audio_hash": "792cfdd588fe",
+          "duration": 10.17
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "heading": "第2章 舞台：川がハイウェイだった時代",
+      "chunks": [
+        {
+          "id": "2-1",
+          "text": "九世紀の東ヨーロッパは、見渡すかぎりの森と、ゆっくり流れる大きな川の世界でした。",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/2-1.wav",
+          "audio_hash": "4dda71c5d0e1",
+          "duration": 6.67
+        },
+        {
+          "id": "2-2",
+          "text": "ここには、東スラヴ人や、フィン系の人たちが、村をつくって暮らしていました。",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/2-2.wav",
+          "audio_hash": "b4af1b2612b5",
+          "duration": 6.17
+        },
+        {
+          "id": "2-3",
+          "text": "この土地で、いちばん大切だったのが「川」です。道路のない時代、川は、そのまま高速道路でした。",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/2-3.wav",
+          "audio_hash": "7fcca9d4458a",
+          "duration": 7.67
+        },
+        {
+          "id": "2-4",
+          "text": "北のバルト海から南の黒海まで、川をつないでいけば、船で行き来できます。このルートは、のちに「ヴァリャーグからギリシアへの道」とよばれました。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/2-4.wav",
+          "audio_hash": "1faa17b23427",
+          "duration": 11.67
+        },
+        {
+          "id": "2-5",
+          "text": "遠く、スウェーデンのビルカという町の遺跡からも、ヴォルガ川の流域でつくられた品物が見つかっています。",
+          "note": "※ビルカ遺跡からヴォルガ流域の産物が出土（ja.wikipedia「ルーシ族」）",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/2-5.wav",
+          "audio_hash": "e714af707c34",
+          "duration": 8.33
+        },
+        {
+          "id": "2-6",
+          "text": "川の道は、北欧から東ヨーロッパ、そしてイスラム世界へと、つながっていたのです。",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/2-6.wav",
+          "audio_hash": "8026317048ef",
+          "duration": 6.5
+        },
+        {
+          "id": "2-7",
+          "text": "川と川のあいだは、船をかついで、陸の上を運んだ、といわれます。毛皮や蜂蜜を運び、かわりに銀を手に入れる。",
+          "note": "※交易の様子は考古学・史料に基づく一般的な説明（出典の追加確認が必要）",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/2-7.wav",
+          "audio_hash": "085189031200",
+          "duration": 8.67
+        },
+        {
+          "id": "2-8",
+          "text": "そんな商人たちが、この道を行き来していました。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/2-8.wav",
+          "audio_hash": "01b84845e428",
+          "duration": 3.83
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "heading": "第3章 リューリク招致伝説",
+      "chunks": [
+        {
+          "id": "3-1",
+          "text": "さて、ここから伝説の話です。",
+          "note": "※年代記による年代。確実な史料はない",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "pan_left",
+          "audio": "_work/audio/3-1.wav",
+          "audio_hash": "9809c12939dc",
+          "duration": 2.5
+        },
+        {
+          "id": "3-2",
+          "text": "ロシアで最も古い年代記は、『原初年代記』とよばれています。",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "zoom_in",
+          "audio": "_work/audio/3-2.wav",
+          "audio_hash": "a173d133d27c",
+          "duration": 4.83
+        },
+        {
+          "id": "3-3",
+          "text": "その記述によると、八六〇年から八六二年にかけて、北のスラヴ系やフィン系の部族は、ヴァリャーグを海のむこうへ追い返しました。",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "pan_right",
+          "audio": "_work/audio/3-3.wav",
+          "audio_hash": "3c4cf7d40248",
+          "duration": 10.17
+        },
+        {
+          "id": "3-4",
+          "text": "ところが、そのあと、部族どうしが争い始め、収まりがつかなくなります。",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "zoom_out",
+          "audio": "_work/audio/3-4.wav",
+          "audio_hash": "981ca5ffd116",
+          "duration": 5.67
+        },
+        {
+          "id": "3-5",
+          "text": "そこで人びとは、ヴァリャーグの「ルーシ」とよばれる人たちに、使いを送りました。「私たちの土地は、広くて豊かです。でも、秩序がありません。",
+          "note": "※年代記の文言を言い換えたもの。史実かどうかは不明",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "pan_left",
+          "audio": "_work/audio/3-5.wav",
+          "audio_hash": "568d86cc7dfb",
+          "duration": 11.33
+        },
+        {
+          "id": "3-6",
+          "text": "どうか来て、治めてください」。",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "zoom_in",
+          "audio": "_work/audio/3-6.wav",
+          "audio_hash": "74e4afa511db",
+          "duration": 2.5
+        },
+        {
+          "id": "3-7",
+          "text": "この呼びかけに応えたのが、三人の兄弟でした。長男が、リューリクです。",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "pan_right",
+          "audio": "_work/audio/3-7.wav",
+          "audio_hash": "07df1678ca7c",
+          "duration": 5.67
+        },
+        {
+          "id": "3-8",
+          "text": "リューリクは、ラドガ、あるいはノヴゴロドに拠点を置き、八七九年ごろに亡くなったと、年代記は伝えます。",
+          "note": "※写本によって、最初の拠点の記述が異なる（ラウレンティ本：ノヴゴロド／ヒュパティオス本：ラドガ）",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "zoom_out",
+          "audio": "_work/audio/3-8.wav",
+          "audio_hash": "6a0a3bb40c60",
+          "duration": 8.33
+        },
+        {
+          "id": "3-9",
+          "text": "そして、その子孫の「リューリク朝」は、十六世紀末まで、七百年以上も続くことになるのです。",
+          "visual": "images/vasnetsov_invitation.jpg",
+          "credit": "ヴィクトル・ヴァスネツォフ『ヴァリャーグの招致』（パブリックドメイン）",
+          "motion": "pan_left",
+          "audio": "_work/audio/3-9.wav",
+          "audio_hash": "87e8450cf55f",
+          "duration": 7.33
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "heading": "第4章 本当か？ 実在をめぐる論争",
+      "chunks": [
+        {
+          "id": "4-1",
+          "text": "ところが、この話には、大きな問題があります。",
+          "note": "※『原初年代記』は1113年ごろ成立（ネストル編とされるが諸説）　※ビザンツ史料に記録。年代記は862年の「招致」の後に位置づける",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/4-1.wav",
+          "audio_hash": "76394f75f56f",
+          "duration": 3.67
+        },
+        {
+          "id": "4-2",
+          "text": "『原初年代記』がまとめられたのは、十二世紀はじめの、一一一三年ごろとされます。事件から、およそ二百五十年もあとです。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/4-2.wav",
+          "audio_hash": "b3a8d34d0e92",
+          "duration": 9.67
+        },
+        {
+          "id": "4-3",
+          "text": "つまり、リューリクを直接知る人が書いた記録では、ないのです。",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/4-3.wav",
+          "audio_hash": "ef73ac1a9bbe",
+          "duration": 5.0
+        },
+        {
+          "id": "4-4",
+          "text": "さらに面白いのは、ルーシのほうが、年代記より先に、外国の史料に登場することです。",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/4-4.wav",
+          "audio_hash": "715200d08d4c",
+          "duration": 6.67
+        },
+        {
+          "id": "4-5",
+          "text": "ビザンツの史料には、八六〇年に、ルーシがコンスタンティノープルを襲った、と記録されています。年代記が語る「招致」の二年前です。",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/4-5.wav",
+          "audio_hash": "edb678362acd",
+          "duration": 10.5
+        },
+        {
+          "id": "4-6",
+          "text": "では、リューリクは実在したのでしょうか。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/4-6.wav",
+          "audio_hash": "c2d1a795af99",
+          "duration": 3.33
+        },
+        {
+          "id": "4-7",
+          "text": "実は、デンマーク系の有力者で、ドレスタットを支配した「ロリク」と同じ人物ではないか、という説があります。",
+          "note": "※説。ボリス・ルィバコフらが唱え、アレクサンドル・ナザレンコらが反論（en.wikipedia「Rurik」）",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/4-7.wav",
+          "audio_hash": "62785000103f",
+          "duration": 8.67
+        },
+        {
+          "id": "4-8",
+          "text": "二十世紀なかばに、この説を復活させた研究者もいましたが、反対する研究者もいます。",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/4-8.wav",
+          "audio_hash": "854c4d7120ed",
+          "duration": 6.67
+        },
+        {
+          "id": "4-9",
+          "text": "三兄弟のうち、あとの二人は、早くに亡くなったことになっています。そのため、名前も含めて、あとから作られた話だ、という見方もあります。",
+          "note": "※説。確定した証拠はない",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/4-9.wav",
+          "audio_hash": "dffbdd5847bc",
+          "duration": 11.0
+        },
+        {
+          "id": "4-10",
+          "text": "結論は、今も出ていません。だからこそ、この話は面白いのです。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/4-10.wav",
+          "audio_hash": "1f453b5344c8",
+          "duration": 5.0
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "heading": "第5章 ルーシとは誰か：ノルマン説とスラヴ説",
+      "chunks": [
+        {
+          "id": "5-1",
+          "text": "では、「ルーシ」とは、いったい何者だったのでしょうか。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/5-1.wav",
+          "audio_hash": "b8280b883c9b",
+          "duration": 4.5
+        },
+        {
+          "id": "5-2",
+          "text": "ひとつの有力な説は、北欧のヴァイキング、つまりノルマン人だ、というものです。",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/5-2.wav",
+          "audio_hash": "749b31b8fc5c",
+          "duration": 6.33
+        },
+        {
+          "id": "5-3",
+          "text": "九世紀のフランク王国の年代記には、「ロース」と名乗る一団が登場します。",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/5-3.wav",
+          "audio_hash": "be45ee7f96d7",
+          "duration": 5.83
+        },
+        {
+          "id": "5-4",
+          "text": "彼らは、フランク王に、「自分たちはスウェーデンの出身だ」と述べた、と記されています。",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/5-4.wav",
+          "audio_hash": "702c54b5d7d0",
+          "duration": 7.0
+        },
+        {
+          "id": "5-5",
+          "text": "スウェーデンの沿岸地方の名前から、「漕ぐ人びと」という意味の言葉に由来する、という説もあります。",
+          "note": "※説。ロスラーゲン地方の名に由来するという有力説（en.wikipedia「Rurik」）",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/5-5.wav",
+          "audio_hash": "0686caf08be8",
+          "duration": 8.0
+        },
+        {
+          "id": "5-6",
+          "text": "これが「ノルマン説」です。ところが、この説には、長い間、強い反発がありました。",
+          "note": "※説。多くの歴史家が支持するが、確証はない（ja.wikipedia「ルーシ族」）",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/5-6.wav",
+          "audio_hash": "19d80c1fd956",
+          "duration": 6.5
+        },
+        {
+          "id": "5-7",
+          "text": "ロシアの国の始まりを、外国人に求めることを、認めたくない、という立場です。ソ連の時代には、党の機関紙も、これに反対する立場を強調しました。",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/5-7.wav",
+          "audio_hash": "6154f50ee84a",
+          "duration": 11.5
+        },
+        {
+          "id": "5-8",
+          "text": "反ノルマン説は、ルーシは、東スラヴ人の一部族、ポリャーネ族の自称から来た、と考えます。",
+          "note": "※説。ロシアなどで主流とされる（ja.wikipedia「ルーシ族」）",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/5-8.wav",
+          "audio_hash": "bfb8d92f6da2",
+          "duration": 7.17
+        },
+        {
+          "id": "5-9",
+          "text": "今では、ルーシは、武装した交易者の集団で、やがてスラヴ人の社会に溶け込んだ、という見方も有力です。どちらが正しいのか、決着はついていません。",
+          "note": "※「ノルマン系の集団が急速にスラヴ化した」とする見方。混血説もあり",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/5-9.wav",
+          "audio_hash": "99fdd07b91fb",
+          "duration": 11.67
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "heading": "第6章 オレグとキエフ",
+      "chunks": [
+        {
+          "id": "6-1",
+          "text": "リューリクが亡くなったとき、息子のイーゴリは、まだ幼い子どもでした。",
+          "note": "※年代記の記述。実際の規模を疑う研究者もいる（同上）。911年の条約は史料に残る",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/6-1.wav",
+          "audio_hash": "105d5cb95a68",
+          "duration": 5.67
+        },
+        {
+          "id": "6-2",
+          "text": "年代記によると、リューリクの親族とされるオレグが、後見人となって、国を引き継ぎます。",
+          "note": "※説。年代記の記述で、近年の研究者には否定する意見もある（en.wikipedia「Oleg of Novgorod」）",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/6-2.wav",
+          "audio_hash": "b0cb14a5cf7c",
+          "duration": 7.0
+        },
+        {
+          "id": "6-3",
+          "text": "八八二年ごろ、オレグは南へ進み、ドニエプル川のほとりの町、キエフを手に入れました。",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/6-3.wav",
+          "audio_hash": "8b717c611346",
+          "duration": 6.83
+        },
+        {
+          "id": "6-4",
+          "text": "年代記は、オレグが、そこを治めていたアスコルドとジールを、だまして殺した、と伝えます。北のノヴゴロドと、南のキエフ。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/6-4.wav",
+          "audio_hash": "e922c0b805ca",
+          "duration": 9.67
+        },
+        {
+          "id": "6-5",
+          "text": "ふたつの拠点が、川でつながったのです。",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/6-5.wav",
+          "audio_hash": "e9d8408fefee",
+          "duration": 3.17
+        },
+        {
+          "id": "6-6",
+          "text": "その後、オレグは、ビザンツ帝国にも遠征し、条約を結んだと伝えられます。",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/6-6.wav",
+          "audio_hash": "3a4b1d51b749",
+          "duration": 5.83
+        },
+        {
+          "id": "6-7",
+          "text": "最期の逸話も有名です。「愛馬が原因で死ぬ」と予言され、馬を遠ざけたオレグ。",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/6-7.wav",
+          "audio_hash": "a14a588344c2",
+          "duration": 6.17
+        },
+        {
+          "id": "6-8",
+          "text": "年月がたち、馬の骨を見に行くと、頭蓋骨から蛇が出てきて、噛まれて亡くなった、というのです。この話は、のちにプーシキンが詩にしました。",
+          "note": "※伝説。実話とは考えられていない",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/6-8.wav",
+          "audio_hash": "551a71868fb4",
+          "duration": 11.0
+        },
+        {
+          "id": "6-9",
+          "text": "ただし、オレグの実像は、はっきりしません。別の史料では、亡くなった年も場所も、年代記と食い違っているのです。",
+          "note": "※『ノヴゴロド第一年代記』は922年没、シェヒター書簡は940年代の「ヘルグ」を記す（同上）",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/6-9.wav",
+          "audio_hash": "5b58aa13a002",
+          "duration": 9.0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "heading": "第7章 イーゴリとオリガ",
+      "chunks": [
+        {
+          "id": "7-1",
+          "text": "オレグのあとを継いだのが、リューリクの息子とされるイーゴリです。",
+          "note": "※年代記の記述。ビザンツ側の記録とも整合する部分がある（en.wikipedia「Igor of Kiev」）　※説。コンスタンティン・ズッカーマンの主張（同上）",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/7-1.wav",
+          "audio_hash": "a76231e0f88b",
+          "duration": 5.33
+        },
+        {
+          "id": "7-2",
+          "text": "年代記によれば、イーゴリは、九四一年と九四四年に、コンスタンティノープルを攻めました。",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/7-2.wav",
+          "audio_hash": "d08bda11e4c1",
+          "duration": 7.17
+        },
+        {
+          "id": "7-3",
+          "text": "ビザンツ側の「ギリシアの火」に艦隊を焼かれながらも、最後には、有利な条約を結びます。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/7-3.wav",
+          "audio_hash": "c6d282713428",
+          "duration": 7.0
+        },
+        {
+          "id": "7-4",
+          "text": "ところが、九四五年、貢ぎ物を取り立てていたイーゴリは、ドレヴリャーネ人に殺されてしまいます。ビザンツの歴史家は、その最期を、こう記しました。",
+          "note": "※助祭レオンの記述（同上）",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/7-4.wav",
+          "audio_hash": "866ad1ff7a7f",
+          "duration": 11.67
+        },
+        {
+          "id": "7-5",
+          "text": "二本の木をたわませ、足を縛って、手を離した、と。恐ろしい死に方です。",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/7-5.wav",
+          "audio_hash": "ff134b318ed0",
+          "duration": 5.67
+        },
+        {
+          "id": "7-6",
+          "text": "ここで登場するのが、妻のオリガです。年代記には、オリガの復讐の話が、いくつも書かれています。",
+          "note": "※年代記の記述。時期と場所は諸説ある（要追加確認）",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/7-6.wav",
+          "audio_hash": "925e5328defe",
+          "duration": 7.67
+        },
+        {
+          "id": "7-7",
+          "text": "なかでも有名なのが、「鳥に火を付けて、敵の町に放った」という話です。もちろん、どこまで事実かはわかりません。",
+          "note": "※伝説。史実と考えられていない（要追加確認）",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/7-7.wav",
+          "audio_hash": "af87095aa3fb",
+          "duration": 9.0
+        },
+        {
+          "id": "7-8",
+          "text": "オリガは、その後、国を治め、キリスト教の洗礼を受けたと伝えられます。",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/7-8.wav",
+          "audio_hash": "739dd52555b6",
+          "duration": 5.67
+        },
+        {
+          "id": "7-9",
+          "text": "ちなみに、ある研究者は、イーゴリの治世は、年代記がいう三十三年ではなく、三年ほどだった、と考えています。",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/7-9.wav",
+          "audio_hash": "621a2656f9c3",
+          "duration": 8.67
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "heading": "第8章 ウラジーミルの改宗",
+      "chunks": [
+        {
+          "id": "8-1",
+          "text": "そして、九八八年。キエフの大公ウラジーミルが、大きな決断をします。国の宗教を、キリスト教にしたのです。",
+          "note": "※年代記の逸話。史実かは不明（en.wikipedia「Vladimir the Great」）",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/8-1.wav",
+          "audio_hash": "fc9592aed0a4",
+          "duration": 8.5
+        },
+        {
+          "id": "8-2",
+          "text": "年代記には、その決め方が、とても面白く書かれています。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/8-2.wav",
+          "audio_hash": "752f4fc06e04",
+          "duration": 4.5
+        },
+        {
+          "id": "8-3",
+          "text": "ウラジーミルは、イスラム教、ローマのキリスト教、ユダヤ教、ビザンツのキリスト教を、使者を送って調べさせました。",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/8-3.wav",
+          "audio_hash": "c6a417dbb729",
+          "duration": 9.17
+        },
+        {
+          "id": "8-4",
+          "text": "イスラム教については、「酒が飲めないのは困る」と退けた、という有名な逸話があります。最後に選ばれたのが、ビザンツ帝国の正教です。",
+          "note": "※年代記の逸話として伝わる（要追加確認）",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/8-4.wav",
+          "audio_hash": "ae38191f8970",
+          "duration": 10.67
+        },
+        {
+          "id": "8-5",
+          "text": "ただし、実際には、政治的な理由も大きかったと考えられます。",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/8-5.wav",
+          "audio_hash": "ffc6cbb0fa7c",
+          "duration": 4.83
+        },
+        {
+          "id": "8-6",
+          "text": "アラビア語の史料によれば、当時、ビザンツ皇帝は反乱に苦しんでいて、ウラジーミルに助けを求めました。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/8-6.wav",
+          "audio_hash": "cc5214f665aa",
+          "duration": 8.17
+        },
+        {
+          "id": "8-7",
+          "text": "その見返りに、皇帝の妹アンナとの結婚と、洗礼が決まった、というのです。",
+          "note": "※アラビア語史料にもとづく説明（同上）",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/8-7.wav",
+          "audio_hash": "f1d9b01f9f0b",
+          "duration": 5.83
+        },
+        {
+          "id": "8-8",
+          "text": "しかも、ビザンツ側の同時代の史料は、この改宗を、ほとんど記録していません。",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/8-8.wav",
+          "audio_hash": "d102d0b88bbc",
+          "duration": 6.17
+        },
+        {
+          "id": "8-9",
+          "text": "今、知られる改宗の物語は、十一世紀になってから、整えられたものだ、という見方もあります。",
+          "note": "※説。ビザンツ側の同時代史料はほとんど言及しない（同上）",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/8-9.wav",
+          "audio_hash": "099736d5d7cd",
+          "duration": 7.33
+        },
+        {
+          "id": "8-10",
+          "text": "こうして、ルーシは、文字や法、建築や美術など、ビザンツの文化を受け入れていきました。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/8-10.wav",
+          "audio_hash": "39337191b779",
+          "duration": 7.0
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "heading": "第9章 まとめ",
+      "chunks": [
+        {
+          "id": "9-1",
+          "text": "最後に、振り返ってみましょう。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/9-1.wav",
+          "audio_hash": "dcef7548488e",
+          "duration": 2.5
+        },
+        {
+          "id": "9-2",
+          "text": "八六二年、リューリクが招かれた、という伝説。八八二年ごろ、オレグがキエフに進み、北と南がつながる。",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/9-2.wav",
+          "audio_hash": "56f379a40ad5",
+          "duration": 8.17
+        },
+        {
+          "id": "9-3",
+          "text": "そして九八八年、ウラジーミルが正教を受け入れる。",
+          "visual": null,
+          "motion": "pan_left",
+          "audio": "_work/audio/9-3.wav",
+          "audio_hash": "5f8c2cb30533",
+          "duration": 4.0
+        },
+        {
+          "id": "9-4",
+          "text": "リューリクの子孫の「リューリク朝」は、十六世紀末まで続きました。キエフを中心にした国は、一二四〇年のモンゴルの侵攻まで、続いたとされます。",
+          "note": "※1598年のフョードル1世の死で断絶（en.wikipedia「Rurik」）",
+          "visual": null,
+          "motion": "zoom_in",
+          "audio": "_work/audio/9-4.wav",
+          "audio_hash": "f4c94ac63998",
+          "duration": 11.5
+        },
+        {
+          "id": "9-5",
+          "text": "「ルーシ」とよばれた人びとは、何者だったのか。リューリクは、本当にいたのか。答えは、まだ出ていません。",
+          "visual": null,
+          "motion": "pan_right",
+          "audio": "_work/audio/9-5.wav",
+          "audio_hash": "211edf5b29ad",
+          "duration": 8.5
+        },
+        {
+          "id": "9-6",
+          "text": "次回は、このキエフの国が、どのように栄え、そして衰えていったのかを、見ていきます。",
+          "note": "※1240年のモンゴル侵攻まで（同上）",
+          "visual": null,
+          "motion": "zoom_out",
+          "audio": "_work/audio/9-6.wav",
+          "audio_hash": "7602831bab43",
+          "duration": 6.83
+        }
+      ]
+    }
+  ]
+}
